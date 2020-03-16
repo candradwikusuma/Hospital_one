@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <!-- <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- <div id="container">
+    <div *ngFor="let a of items" class="category-block">
+
+     
+
+      <ion-slides [options]="slide1pts" mode="ios" pager="true">
+
+        <ion-slide *ngFor="let product of a.products">
+
+
+          <img src="{{product.img}}">
+
+          <div>
+            <ion-button>A block button</ion-button>
+          </div>
+
+
+        </ion-slide>
+      </ion-slides>
+
+
+    </div>
+  </div> -->
+  <!-- <ion-row>
+    <ion-col>
+
+      <div class="ion-text-right">
+
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+
+          <ion-title>
+
+          </ion-title>
+
+        </ion-buttons>
+
+      </div>
+    </ion-col>
+  </ion-row> -->
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <div>
+          <ion-slides #slides [options]="slideOpts" autoplay="false" (ionSlideDidChange)="ionSlideChange(slides)" pager>
+
+            <ion-slide>
+
+              <ion-img cache="true" src="https://picsum.photos/id/341/768/1024?grayscale" id="img2  "></ion-img>
+              <!-- <div class="-color1">
+                <h1>Hi, Welcome!</h1>
+              </div>
+              <H3>The new generation of mobile wallets. Send and receive payments all
+                around the world through your mobile phone.</H3>
+              <ion-button routerDirection="root" [routerLink]="['/home']">
+                Button
+              </ion-button> -->
+            </ion-slide>
+            <ion-slide>
+              <ion-img cache="true" src="https://picsum.photos/id/400/768/1024?grayscale"></ion-img>
+
+            </ion-slide>
+            <ion-slide>
+              <ion-img cache="true" src="https://picsum.photos/id/366/768/1024?grayscale"></ion-img>
+              <!-- <h1>Slide 3</h1> -->
+            </ion-slide>
+            <ion-slide>
+              <ion-img cache="true" src="https://picsum.photos/id/367/768/1024?grayscale"></ion-img>
+              <!-- <h1>Slide 4</h1> -->
+            </ion-slide>
+            <ion-slide>
+              <ion-img cache="true" src="https://picsum.photos/id/370/768/1024?grayscale"></ion-img>
+              <!-- <h1>Slide 5</h1> -->
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button class="button" color="dark" size="large" (click)="next()">
+    <div class="parent"> {{buttonName}} </div>
+  </ion-button>
+
+  <h1 class="text">Welcome</h1>
+  <h3 class="text">Persada Hospital</h3>
+</ion-content>
