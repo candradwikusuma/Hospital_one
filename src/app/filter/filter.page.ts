@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SliderService } from '../slider.service';
 import { ListdokterService } from '../listdokter.service';
+import { Storage } from '@ionic/storage';
+
+
 
 @Component({
   selector: 'app-filter',
@@ -54,7 +57,14 @@ export class FilterPage implements OnInit {
     }
   };
 
-  constructor(private route: Router, private listdokter: ListdokterService) { }
+  datastorage: any;
+  name: string;
+
+  users: any=[];
+  limit: number=10 // limit get data
+  start: number=0;
+
+  constructor(private route: Router, private listdokter: ListdokterService, private storage:Storage) { }
 
   ngOnInit() {
     this.items = this.listdokter.getDokters();
@@ -63,4 +73,6 @@ export class FilterPage implements OnInit {
     this.route.navigateByUrl('/dokter')
     // this.route.navigate(['tab3']);
   }
+
+  
 }
