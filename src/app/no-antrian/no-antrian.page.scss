@@ -1,0 +1,100 @@
+// .background {
+//     //--color: #2AAD77;
+//     // --background: url('https://picsum.photos/1080'); // -webkit-background-size: cover;
+//     // -moz-background-size: cover;
+//     // background-size: 20px 10px;
+//     background-color: blueviolet;
+// }
+ion-content {
+    --background: #2AAD77;
+    ;
+}
+
+//--background: url('https://picsum.photos/1080') 0 0/100% 55% no-repeat;
+// -webkit-background-size: cover;
+// -moz-background-size: cover;
+// background-size: 20px 10px;
+
+
+.left_side,
+.right_side {
+
+    height: 95vh;
+    border-radius: 30px;
+
+}
+
+.content {
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 8px 8px 10px #646968;
+
+}
+
+.left_side {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.right_side {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dokter {
+    display: flex;
+    justify-content: center;
+}
+
+.dokter-img {
+    border-radius: 100% !important;
+    overflow: hidden;
+    width: 300px;
+    border: 5px solid rgb(10, 88, 33);
+    box-shadow: 1px 1px 10px rgb(153, 248, 153);
+    // position: absolute;
+    // top: 30%;
+}
+
+h1 {
+    color: #262831;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: left;
+}
+
+h2 {
+    text-align: left;
+    font-size: 15px;
+    color: #ADADB3;
+
+}
+
+.person {
+    display: flex;
+    justify-content: center;
+}
+
+.logo_person {}
+
+// ion-row {
+//     border: 1px solid rgb(200, 255, 0);
+// }
+
+// ion-col {
+//     border: 1px solid red;
+// }
+
+// ion-grid {
+
+//     ion-row {
+//         height: 33.33%;
+//     }
+// }

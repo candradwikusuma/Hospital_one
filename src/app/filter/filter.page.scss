@@ -1,47 +1,161 @@
+// ion-row {
+//     border: 1px solid rgb(200, 255, 0);
+// }
+
 // ion-col {
 //     border: 1px solid red;
 // }
 
-ion-card {
-    border: 1px solid green;
+.container {
 }
 
+.ion-padding-horizontal {
+  padding: 0 70px;
+}
+
+ion-content {
+  --background: #f7fffe;
+}
+
+ion-toolbar {
+  --background: #f7fffe;
+}
+
+.specialist {
+  background: #e5f2f1;
+  box-shadow: inset 7px 7px 14px #c0cbca, inset -7px -7px 14px #ffffff;
+}
+
+// ion-label,
+// ion-select {
+//     box-shadow: inset 7px 7px 14px #c0cbca,
+//         inset -7px -7px 14px #ffffff;
+// }
+
 .dokter-img {
-    border-radius: 100% !important;
-    overflow: hidden;
-    width: 100px;
-    border: 5px solid rgb(10, 88, 33);
-    // box-shadow: 1px 1px 10px green;
-    position: absolute;
-    top: 38%;
+  border-radius: 100% !important;
+
+  width: 90px;
+  border: 3px solid white;
+  box-shadow: 2px 2px 5px #2aad77;
+
+  position: absolute;
+  top: 28%;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .card {
-    height: 220px;
+  width: 250px;
+  height: 220px;
+  background: white;
+  // border: 4px solid #e3e8e5;
+  // box-shadow: 8px 8px 10px #9c9c9c,
+  //     -8px -8px 10px #ffffff;
+  // box-shadow: 7px 7px 14px #c0cbca,
+  //     -7px -7px 14px #ffffff;
 }
 
 ion-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2AAD77;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: #2AAD77;
 }
 
 ion-card-subtitle {
-    font-size: 9px;
-    color: white;
+  font-size: 9px;
+  font-weight: 900;
+  color: #545980;
 }
 
 ion-card-title {
-    font-size: 8px;
-    color: white;
+  font-size: 8px;
+
+  color: #d7dbe2;
 }
 
 ion-card-content {
-    font-size: 9px;
+  font-size: 11px;
+}
+
+.parent {
+  color: #2aad77;
+}
+
+.showbutton {
+  color: white;
+}
+
+.show {
+  //box-shadow: 2px 2px 5px #2AAD77;
+}
+
+ion-segment-button {
+  --indicator-color: #2aad77;
+  --indicator-transition: 0.3s;
+  --color: #2aad77;
+  --color-checked: white;
+}
+
+:host::ng-deep.selected-item {
+  border-radius: 2px !important;
+  background: #2aad77 !important;
+  border: 1px solid #2aad77 !important;
+  padding: 0 10px 2px !important;
+}
+
+:host ::ng-deep .multiselect-dropdown .dropdown-btn {
+  display: inline-block !important;
+  margin-bottom: 0 !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  border: 1px solid #2aad77 !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  cursor: pointer !important;
+  background-image: none !important;
+  border-radius: 5px !important;
+}
+
+// :host ::ng-deep .multiselect-dropdown:focus {
+
+//     outline: 0px !important;
+//     outline: -webkit-focus-ring-color auto 1px;
+//     outline: 0px solid #2AAD77;
+// }
+
+// .custom-control-label {
+//     color: #318844;
+//     border: red;
+// }
+
+//
+:host ::ng-deep .multiselect-item-checkbox input[type="checkbox"] + div:before {
+  box-sizing: content-box;
+  content: "";
+  color: #2aad77 !important;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: -9px;
+  border: 2px solid #2aad77 !important;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+:host
+  ::ng-deep
+  .multiselect-item-checkbox
+  input[type="checkbox"]:checked
+  + div:before {
+  -webkit-animation: 0.2s ease-in borderscale;
+  animation: 0.2s ease-in borderscale;
+  background: #2aad77 !important;
 }

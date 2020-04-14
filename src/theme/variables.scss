@@ -74,6 +74,71 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-color-hospital: #e5f2f1;
+  --ion-color-hospital-rgb: 245, 61, 61;
+  --ion-color-hospital-contrast: #ffffff;
+  --ion-color-hospital-contrast-rgb: 255, 255, 255;
+  --ion-color-hospital-shade: #d33939;
+  --ion-color-hospital-tint: #f25454;
+
+  --ion-color-persada: #2aad77;
+  --ion-color-persada-rgb: 245, 61, 61;
+  --ion-color-persada-contrast: #ffffff;
+  --ion-color-persada-contrast-rgb: 255, 255, 255;
+  --ion-color-persada-shade: #d33939;
+  --ion-color-persada-tint: #f25454;
+
+  --ion-font-family: "Poppins";
+  ion-tab-button.tab-selected {
+    ion-icon,
+    ion-label {
+      color: var(--ion-color-hospital) !important;
+      --ion-color-base: var(--ion-color-hospital) !important;
+    }
+  }
+  // @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+  // $font-family-base: "Poppins", sans-serif !default;
+  // $font-family-ios-base: "Poppins";
+  // $font-family-md-base: "Poppins";
+  // $font-family-wp-base: "Poppins";
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Lobster";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/Lobster-Regular.ttf");
+}
+//@import "poppins";
+
+// body {
+//   font-family: "Poppins" !important;
+//   font-weight: 400 !important;
+// }
+
+.ion-color-hospital {
+  --ion-color-base: var(--ion-color-hospital);
+  --ion-color-hospital-rgb: var(--ion-color-hospital-rgb);
+  --ion-color-hospital-contrast: var(--ion-color-hospital-contrast);
+  --ion-color-hospital-contrast-rgb: var(--ion-color-hospital-contrast-rgb);
+  --ion-color-hospital-shade: var(--ion-color-hospital-shade);
+  --ion-color-hospital-tint: var(--ion-color-hospital-tint);
+}
+
+.ion-color-persada {
+  --ion-color-base: var(--ion-color-persada);
+  --ion-color-persada-rgb: var(--ion-color-persada-rgb);
+  --ion-color-persada-contrast: var(--ion-color-persada-contrast);
+  --ion-color-persada-contrast-rgb: var(--ion-color-persada-contrast-rgb);
+  --ion-color-persada-shade: var(--ion-color-persada-shade);
+  --ion-color-persada-tint: var(--ion-color-persada-tint);
 }
 
 // @media (prefers-color-scheme: dark) {
@@ -184,7 +249,6 @@
 //     --ion-item-background: #1c1c1c;
 //     --ion-item-background-activated: #313131;
 //   }
-
 
 //   /*
 //    * Material Design Dark Theme

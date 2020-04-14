@@ -3,13 +3,14 @@ import { IonicModule } from '@ionic/angular';
 
 import { NoAntrianPage } from './no-antrian.page';
 
+
 describe('NoAntrianPage', () => {
   let component: NoAntrianPage;
   let fixture: ComponentFixture<NoAntrianPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoAntrianPage ],
+      declarations: [NoAntrianPage],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

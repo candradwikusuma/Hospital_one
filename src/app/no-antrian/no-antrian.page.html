@@ -1,9 +1,82 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>no_antrian</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col class="ion-align-self-center" size-md="12" size="12">
+        <div class="content">
+          <ion-grid>
+            <ion-row>
+              <ion-col class="ion-align-self-center" size-md="5" size="12">
+                <div class="left_side">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size-md="8" offset-md="2">
+                        <h1 @slidelefttitle>Thank you!</h1>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col size-md="8" offset-md="2">
+                        <h2 @slidelefttitle>
+                          Someone will be calling you in 2 minutes. We look
+                          forward to talking with you!
+                        </h2>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col
+                        class="ion-align-self-center"
+                        size-md="4"
+                        offset-md="2"
+                      >
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col
+                        class="ion-align-self-center"
+                        size-md="5"
+                        offset-md="2"
+                      >
+                        <ion-button
+                          mode
+                          color="persada"
+                          (click)="next()"
+                          expand="block"
+                        >
+                          Go back home
+                        </ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </div>
+              </ion-col>
+              <ion-col class="ion-align-self-center" size-md="7" size="12">
+                <div class="right_side">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col class="logo" size-md="12">
+                        <img
+                          src="../../assets/image/undraw_medicine_b1ol.png"
+                          class="logo"
+                        />
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+      <ion-card-title>My animated card</ion-card-title>
+    </ion-card-header>
+    <ion-card-content @fadein>
+      <img
+        src="https://d2hkzae1xmryt1.cloudfront.net/wp-content/uploads/2017/06/simon-dwx.png"
+      />
+    </ion-card-content>
+  </ion-card> -->
 </ion-content>

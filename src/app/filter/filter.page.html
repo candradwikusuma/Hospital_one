@@ -1,75 +1,104 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md">
     <ion-title>Filter Dokter</ion-title>
     <ion-buttons slot="start">
       <ion-back-button mode="md" defaultHref="/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Header - No Border</ion-title>
+  </ion-toolbar>
+</ion-header> -->
 <ion-content>
-
   <ion-grid>
     <ion-row class="ion-align-items-center" class="ion-justify-content-center">
-      <ion-col size-md="2" class="ion-align-self-center">
-        <div>
-          <ion-button expand="block" class="button" color="dark" size="small">
-            <div class="parent"> Show All</div>
+      <ion-col size-md="4" class="ion-align-self-center">
+        <ion-segment mode="ios" (ionChange)="segmentChanged($event)">
+          <ion-segment-button>
+            <ion-label>Show all</ion-label>
+          </ion-segment-button>
+          <ion-segment-button>
+            <ion-label>Today</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+        <!-- <div>
+          <ion-button expand="block" class="show" color="persada" size="small">
+            <div class="showbutton"> Show All</div>
           </ion-button>
         </div>
       </ion-col>
-      <ion-col size-md="4">
-
-        <ion-item>
-          <ion-icon name="calendar-outline"></ion-icon>
-
-          <!-- <h1>placeholder="Date of Schedule"</h1> -->
-          <ion-datetime placeholder="Date of Schedule"></ion-datetime>
-        </ion-item>
-
-        <!-- <h1></h1> -->
-      </ion-col>
-      <ion-col size-md="4">
-        <ion-item>
-          <ion-label>Choose Specialist</ion-label>
-          <ion-select placeholder="Choose Specialist" value=" notifications" interface="action-sheet">
-            <ion-select-option value="enable">Enable</ion-select-option>
-            <ion-select-option value="mute">Mute</ion-select-option>
-            <ion-select-option value="mute_week">Mute for a week</ion-select-option>
-            <ion-select-option value="mute_year">Mute for a year</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
       <ion-col size-md="2" class="ion-align-self-center">
         <div>
-          <ion-button expand="block" class="button" color="dark" size="small">
-            <div class="parent"> Check</div>
+          <ion-button expand="block" class="today" color="persada" size="small">
+            <div class="showbutton"> Today</div>
           </ion-button>
+        </div> -->
+      </ion-col>
+
+      <ion-col size-md="5">
+        <div class="container">
+          <form [formGroup]="myForm">
+            <ng-multiselect-dropdown
+              [placeholder]="'Select Specialist'"
+              name="city"
+              [data]="cities"
+              formControlName="city"
+              [disabled]="disabled"
+              [settings]="dropdownSettings"
+              (onSelect)="onItemSelect($event)"
+            >
+            </ng-multiselect-dropdown>
+          </form>
         </div>
+        <!-- <div class="container">
+
+
+          <ng-select class="custom" [items]="users" [multiple]="false" [closeOnSelect]="false"
+            placeholder="Choose Specialist" autofocus [(ngModel)]="selectedUser">
+
+            <ng-template ng-multi-label-tmp> Specialist : {{selectedUser}}</ng-template>
+
+            <ng-template ng-option-tmp let-item="item" let-index="index" let-item$="item$">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" [ngModel]="item$.selected" class="custom-control-input" />
+                <label class="form-check-label ml-2 custom-control-label">{{item}}</label>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div> -->
       </ion-col>
     </ion-row>
   </ion-grid>
-  <h1>LIST DOKTER</h1>
+  <!-- <h1>LIST DOKTER</h1> -->
 
-
-  <ion-grid class="ion-no-padding">
-    <ion-row size-md="1" class="ion-align-items-center">
-      <ion-col size-md="10" offset-md="1" size-xl="10" offset-xl="1" class="ion-align-self-center">
+  <ion-grid class="ion-padding-horizontal">
+    <ion-row class="ion-align-items-center">
+      <ion-col size-md="12" offset-md="0" size-xl="12" offset-xl="0">
         <div *ngFor="let a of items" class="category-block">
-          <ion-slides pager="true" [options]="slideOpts">
-            <ion-slide *ngFor="let dokter of a.dokters" class="swiper-wrapper">
+          <ion-slides [options]="slideOpts">
+            <ion-slide *ngFor="let dokter of a.dokters">
               <ion-grid>
                 <ion-row>
                   <ion-col>
-                    <ion-card class="card" (click)="next()">
+                    <ion-card mode="ios" class="card" (click)="next()">
+                      <img src="{{dokter.img}}" class="dokter-img" />
                       <ion-card-header>
-                        <ion-card-subtitle>{{dokter.specialist}}</ion-card-subtitle>
-                        <ion-card-title>{{dokter.name}}</ion-card-title>
-
+                        <ion-card-subtitle>{{dokter.name}} </ion-card-subtitle>
+                        <ion-card-title>Sub specialist: Otologi</ion-card-title>
                       </ion-card-header>
-                      <img src="{{dokter.img}}" class="dokter-img">
+
                       <ion-card-content>
-                        <!-- Founded in 1829 on an isthmus between Lake Monona -->
+                        <ion-button
+                          mode="ios"
+                          expand="block"
+                          class="button"
+                          color="hospital"
+                          size="small"
+                        >
+                          <div class="parent">{{dokter.specialist}}</div>
+                        </ion-button>
                       </ion-card-content>
                     </ion-card>
                   </ion-col>
@@ -79,8 +108,6 @@
           </ion-slides>
         </div>
       </ion-col>
-
     </ion-row>
   </ion-grid>
-
 </ion-content>

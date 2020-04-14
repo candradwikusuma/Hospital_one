@@ -1,62 +1,115 @@
 .left_side,
 .right_side {
-
-    height: 97vh;
-    border-radius: 30px;
-
+  height: 98vh;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 .left_side {
-    background-color: #2AAD77;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -55px;
+  background-color: #2aad77;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -55px;
+  box-shadow: 8px 8px 10px #c6cac8;
 }
 
 .right_side {
-    // background-color: hotpink;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  // background-color: hotpink;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dokter {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .dokter-img {
-    border-radius: 100% !important;
-    overflow: hidden;
-    width: 300px;
-    border: 5px solid rgb(10, 88, 33);
-    box-shadow: 1px 1px 10px rgb(153, 248, 153);
-    // position: absolute;
-    // top: 30%;
+  border-radius: 100% !important;
+  overflow: hidden;
+  width: 300px;
+  border: 10px solid white;
+  box-shadow: 8px 8px 10px #646968;
+  // position: absolute;
+  // top: 30%;
 }
 
 h1,
 h2 {
-    color: white;
+  color: white;
 }
 
 h1 {
-    font-size: 35px;
-    text-align: center;
+  font-size: 35px;
+  text-align: center;
 }
 
 h2 {
-    text-align: center;
-
+  text-align: center;
 }
 
 .person {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.logo_person {}
+ion-input {
+  //   --color: #2aad77;
+  max-width: 50vw;
+}
+
+// .item-hightlight {
+//   color: #2aad77;
+// }
+
+:host ::ng-deep .ng-select.custom {
+  min-height: 0px !important;
+  max-width: 50vw !important;
+}
+
+:host ::ng-deep .ng-select.dropdown {
+  border: 1px solid black !important;
+}
+
+::ng-deep .ng-select {
+  padding-left: 19px;
+  /* padding-bottom: 1.25em; */
+  padding-top: 18px;
+  padding-bottom: 0px;
+}
+
+::ng-deep .ng-select .ng-select-container .ng-value-container .ng-placeholder {
+  color: #2aad77;
+}
+
+::ng-deep
+  .ng-select.ng-select-focused
+  .ng-select-container
+  .ng-value-container
+  .ng-placeholder {
+  color: #2aad77;
+}
+
+::ng-deep
+  .ng-dropdown-panel
+  .ng-dropdown-panel-items
+  .ng-option.ng-option-selected {
+  color: #2aad77;
+}
+
+:host ::ng-deep .ng-select .ng-select-container:after {
+  border-bottom-color: #c8c7cc !important;
+}
+
+// ion-grid {
+
+//     ion-row {
+//         height: 33.33%;
+//     }
+// }
 
 // ion-row {
 //     border: 1px solid rgb(200, 255, 0);
@@ -64,11 +117,4 @@ h2 {
 
 // ion-col {
 //     border: 1px solid red;
-// }
-
-// ion-grid {
-
-//     ion-row {
-//         height: 33.33%;
-//     }
 // }

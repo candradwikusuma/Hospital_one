@@ -26,48 +26,95 @@
 //   text-decoration: none;
 // }
 
-ion-content ion-toolbar {
-  --background: translucent;
+body {
+  font-family: "Poppins" !important;
 }
-
 ion-button {
-  margin-top: 100px;
-  position: absolute;
-  border-radius: 20px;
-  width: 300px;
-  height: 75px;
+  // margin-top: 100px;
+  // position: absolute;
+  // border-radius: 20px;
+  // width: 300px;
+  // height: 75px;
+  position: fixed;
+  top: 70%;
+  left: 42%;
+  height: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  box-shadow: 0 0 5px #ff0000, 0 0 5px #0000ff;
 }
 
 .button {
-  margin-top: -200px;
+  //margin-top: -200px;
   z-index: 1;
-  margin-left: 235px;
-
+  // margin-left: 235px;
 }
 
 h1 {
   position: absolute;
-  margin-top: -1000px;
+  top: 20%;
   z-index: 1;
   font-size: 120px;
-  color: #2AAD77;
-  margin-left: 40px;
+  color: #2aad77;
+  left: 10%;
+  font-family: "Lobster" !important;
+  // text-shadow: 2px 2px 2px #ffff;
+  text-shadow: 0 0 5px #ff0000, 0 0 5px #0000ff;
 }
 
 h3 {
   position: absolute;
-  margin-top: -870px;
+  top: 40%;
   z-index: 1;
   font-size: 90px;
-  color: #2AAD77;
-  margin-left: 40px;
+  color: #2aad77;
+  left: 10%;
+  font-family: "Lobster" !important;
+  text-shadow: 0 0 5px #ff0000, 0 0 5px #0000ff;
 }
 
 // ion-col {
 //   border: 1px solid red;
 // }
-
-ion-img {
+ion-slides {
+  // overflow: auto;
+  // bottom: 0;
+  // left: 0;
+  // margin: auto;
+  // overflow: auto;
+  // position: fixed;
+  // right: 0;
+  // top: 0;
   width: 100% !important;
-  height: auto !important;
+  height: 100vh !important;
 }
+ion-slides > ion-image {
+  // max-width: 100% !important;
+  // max-height: 100% !important;
+  // position: absolute;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  overflow: auto;
+  // bottom: 0;
+  // left: 0;
+  // margin: auto;
+  // overflow: auto;
+  // position: fixed;
+  // right: 0;
+  // top: 0;
+  // top: 0;
+  // bottom: 0;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+// ion-row {
+//   border: 1px solid rgb(200, 255, 0);
+// }
+
+// ion-col {
+//   border: 1px solid red;
+// }

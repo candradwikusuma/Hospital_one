@@ -5,16 +5,19 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { FilterPageRoutingModule } from './filter-routing.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { FilterPage } from './filter.page';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FilterPageRoutingModule
+    FilterPageRoutingModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    ReactiveFormsModule
   ],
   declarations: [FilterPage]
 })
-export class FilterPageModule {}
+export class FilterPageModule { }

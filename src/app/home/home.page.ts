@@ -1,11 +1,11 @@
-import { Component, ViewChildren } from '@angular/core';
-import { SliderService } from '../slider.service';
-import { IonSlides } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Component, ViewChildren } from "@angular/core";
+import { SliderService } from "../slider.service";
+import { IonSlides } from "@ionic/angular";
+import { Router } from "@angular/router";
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: "app-home",
+  templateUrl: "home.page.html",
+  styleUrls: ["home.page.scss"],
 })
 export class HomePage {
   // items = [];
@@ -31,7 +31,6 @@ export class HomePage {
 
   //     slidesPerView: 1,
 
-
   //     loop: true,
 
   //   },
@@ -39,23 +38,23 @@ export class HomePage {
 
   //     slidesPerView: 1,
 
-
   //     loop: true,
 
   //   }
   // }
-  @ViewChildren('slides') slides: IonSlides;
+  @ViewChildren("slides") slides: IonSlides;
   buttonName = "APPOINTMENT";
   selectedSlide: any;
   slideOpts = {
     loop: true,
+    height: 100,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
-    }
+    },
   };
 
-  constructor(private slider: SliderService, private route: Router) { }
+  constructor(private slider: SliderService, private route: Router) {}
 
   ionSlideChange(slides) {
     this.selectedSlide = slides;
@@ -84,7 +83,7 @@ export class HomePage {
   //   this.items = this.slider.getProducts();
   // }
   next() {
-    this.route.navigateByUrl('/filter')
+    this.route.navigateByUrl("/filter");
     // this.route.navigate(['tab3']);
   }
 }
