@@ -24,9 +24,10 @@ export class ListdokterService {
       ]
     },
   ];
-  constructor() { }
+  constructor() { }  
   getDokters() {
     return this.data;
   }
 }
+ 
 
