@@ -2,191 +2,185 @@
   <ion-buttons slot="start">
     <ion-back-button mode="md" defaultHref="/filter"></ion-back-button>
   </ion-buttons>
-  <ion-grid>
-    <!-- <ion-button (click)="back()">
-      <ion-icon name="arrow-back-outline"></ion-icon>
-    </ion-button>
- -->
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col class="ion-align-self-center" size-md="6" size="12">
+          <ion-button class="back" fill="clear" (click)="back()">
+            <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+          </ion-button>
+          <div class="left_side">
+            <ion-grid>
+              <ion-row>
+                <ion-col class="dokter">
+                  <img src="{{docter.img}}" class="dokter-img" />
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size-md="10" offset-md="1">
+                  <h1>{{docter.name}}</h1>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size-md="8" offset-md="2">
+                  <h2>{{docter.specialist}}</h2>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+        <ion-col size-md="6" size="12">
+          <div class="right_side">
+            <ion-grid>
+              <ion-row class="ion-align-self-center">
+                <ion-col class="logo" size-md="6" offset-md="3">
+                  <img
+                    src="../../assets/image/logo_persada_hospital_2_-_edit.png"
+                    class="logo"
+                  />
+                </ion-col>
+              </ion-row>
+              <ion-row class="ion-align-self-center">
+                <ion-col size-md="12"> </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col
+                  class="ion-align-self-end"
+                  size-md="1"
+                  offset-md="1"
+                  size="2"
+                >
+                  <img src="../../assets/image/login.png" class="logo_person" />
+                </ion-col>
+                <ion-col class="ion-align-self-center" size-md="9" size="10">
+                  <ion-item mode="md">
+                    <ion-label color="persada" position="floating"
+                      >Name</ion-label
+                    >
+                    <ion-input
+                      type="text"
+                      ngModel
+                      name="name"
+                      required
+                    ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col
+                  class="ion-align-self-end"
+                  size-md="1"
+                  offset-md="1"
+                  size="2"
+                >
+                  <img
+                    src="../../assets/image/arroba.png"
+                    class="logo_person"
+                  />
+                </ion-col>
+                <ion-col class="ion-align-self-center" size-md="9" size="10">
+                  <ion-item mode="md">
+                    <ion-label color="persada" position="floating"
+                      >Email</ion-label
+                    >
+                    <ion-input
+                      type="email"
+                      ngModel
+                      name="email"
+                      required
+                      email
+                      #emailCtrl="ngModel"
+                    ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col
+                  class="ion-align-self-end"
+                  size-md="1"
+                  offset-md="1"
+                  size="2"
+                >
+                  <img
+                    src="../../assets/image/telephone-call.png"
+                    class="logo_person"
+                  />
+                </ion-col>
+                <ion-col class="ion-align-self-center" size-md="9" size="10">
+                  <ion-item mode="md">
+                    <ion-label type="number" color="persada" position="floating"
+                      >Handphone</ion-label
+                    >
+                    <ion-input
+                      type="number"
+                      ngModel
+                      name="handphone"
+                      required
+                    ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
 
-    <ion-row class="ion-align-items-center">
-      <ion-col class="ion-align-self-center" size-md="6" size="12">
-        <ion-button fill="clear" (click)="back()">
-          <ion-icon color="light" name="arrow-back-outline"></ion-icon>
-        </ion-button>
-        <div class="left_side">
-          <ion-grid>
-            <ion-row>
-              <ion-col class="dokter">
-                <img src="../../assets/image/sample.jpeg" class="dokter-img" />
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size-md="10" offset-md="1">
-                <h1>dr.Ahmad Dian Wahyudhion,Sp.THT-KL</h1>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size-md="8" offset-md="2">
-                <h2>Specialist Head and Neck</h2>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
+              <ion-row>
+                <ion-col
+                  class="ion-align-self-end"
+                  size-md="1"
+                  offset-md="1"
+                  size="2"
+                >
+                  <img src="../../assets/image/clock.png" class="logo_person" />
+                </ion-col>
+                <ion-col class="ion-align-self-center" size-md="9" size="10">
+                  <!-- <ion-label position="floating" color="hos">Schedule </ion-label> -->
+                  <!-- <ion-input Readonly (click)="showBasicPicker()">{{schedule}}</ion-input> -->
+                  <!-- <ion-label></ion-label> -->
 
-          <!-- <ion-grid>
-            <ion-row>
-              <ion-col class="ion-align-self-center" size="12">
-
-              </ion-col>
-
-            </ion-row>
-          </ion-grid> -->
-        </div>
-      </ion-col>
-      <ion-col class="ion-align-self-center" size-md="6" size="12">
-        <div class="right_side">
-          <!-- <ion-grid>
-            <ion-row>
-              <ion-col class="logo" size-md="12">
-                <img src="../../assets/image/logo_persada.png" class="logo">
-              </ion-col>
-            </ion-row>
-          </ion-grid> -->
-          <ion-grid>
-            <ion-row class="ion-align-self-center">
-              <ion-col class="logo" size-md="10" offset-md="1">
-                <img
-                  src="../../assets/image/logo_persada_hospital_2_-_edit.png"
-                  class="logo"
-                />
-              </ion-col>
-            </ion-row>
-            <ion-row class="ion-align-self-center">
-              <ion-col size-md="12"> </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col
-                class="ion-align-self-end"
-                size-md="1"
-                offset-md="1"
-                size="2"
-              >
-                <img src="../../assets/image/login.png" class="logo_person" />
-              </ion-col>
-              <ion-col class="ion-align-self-center" size-md="9" size="10">
-                <ion-item mode="ios">
-                  <ion-label color="persada" position="floating"
-                    >Name</ion-label
-                  >
-                  <ion-input></ion-input>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col
-                class="ion-align-self-end"
-                size-md="1"
-                offset-md="1"
-                size="2"
-              >
-                <img src="../../assets/image/arroba.png" class="logo_person" />
-              </ion-col>
-              <ion-col class="ion-align-self-center" size-md="9" size="10">
-                <ion-item mode="ios">
-                  <ion-label color="persada" position="floating"
-                    >Email</ion-label
-                  >
-                  <ion-input></ion-input>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col
-                class="ion-align-self-end"
-                size-md="1"
-                offset-md="1"
-                size="2"
-              >
-                <img
-                  src="../../assets/image/telephone-call.png"
-                  class="logo_person"
-                />
-              </ion-col>
-              <ion-col class="ion-align-self-center" size-md="9" size="10">
-                <ion-item mode="ios">
-                  <ion-label type="number" color="persada" position="floating"
-                    >Handphone</ion-label
-                  >
-                  <ion-input></ion-input>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-            <!-- <ion-row>
-              <ion-col class="ion-align-self-end" size-md="1" offset-md="1" size="2">
-                <img src="../../assets/image/calendar.png" class="logo_person">
-              </ion-col>
-              <ion-col class="ion-align-self-center" size-md="9" size="10">
-                <ion-item>
-                  <ion-label position="floating" color="hos">Schedule</ion-label>
-                  <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09"></ion-datetime>
-                </ion-item>
-              </ion-col>
-            </ion-row> -->
-            <ion-row>
-              <ion-col
-                class="ion-align-self-end"
-                size-md="1"
-                offset-md="1"
-                size="2"
-              >
-                <img src="../../assets/image/clock.png" class="logo_person" />
-              </ion-col>
-              <ion-col class="ion-align-self-center" size-md="9" size="10">
-                <!-- <ion-label position="floating" color="hos">Schedule </ion-label> -->
-                <!-- <ion-input Readonly (click)="showBasicPicker()">{{schedule}}</ion-input> -->
-                <!-- <ion-label></ion-label> -->
-
-                <!-- <ion-label>{{schedule}} </ion-label>
+                  <!-- <ion-label>{{schedule}} </ion-label>
                   <ion-button color="hos" slot="start" (click)="showBasicPicker()" fill="clear">Choose hours
                   </ion-button> -->
-
-                <ng-select
-                  class="custom"
-                  [items]="users"
-                  [multiple]="false"
-                  [closeOnSelect]="true"
-                  placeholder="Choose Time Schedule"
-                  autofocus
-                  [(ngModel)]="selectedUser"
+                  <ion-item mode="md">
+                    <ion-label color="persada" position="floating"
+                      >Schedule</ion-label
+                    >
+                    <ion-select
+                      type="text"
+                      ngModel
+                      name="schedule"
+                      required
+                      interface="popover"
+                      placeholder="Select hour"
+                    >
+                      <ion-select-option *ngFor="let a of docter.schedule"
+                        >{{a.start}}-{{a.end}}</ion-select-option
+                      >
+                    </ion-select>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size-md="12"> </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col
+                  class="ion-align-self-center"
+                  size-md="4"
+                  offset-md="7"
                 >
-                  <!-- <ng-template ng-multi-label-tmp> {{selectedUser}}</ng-template> -->
-
-                  <!-- <ng-template ng-option-tmp let-item="item" let-index="index" let-item$="item$">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" [ngModel]="item$.selected" class="custom-control-input" />
-                      <label class="form-check-label ml-2 custom-control-label">{{item}}</label>
-                    </div>
-                  </ng-template> -->
-                </ng-select>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size-md="12"> </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col class="ion-align-self-center" size-md="4" offset-md="7">
-                <ion-button
-                  class="submit"
-                  color="persada"
-                  (click)="next()"
-                  expand="block"
-                >
-                  Submit
-                </ion-button>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+                  <ion-button
+                    type="submit"
+                    color="persada"
+                    (click)="onBookDoctor()"
+                    expand="block"
+                    [disabled]="!f.valid"
+                  >
+                    Submit
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

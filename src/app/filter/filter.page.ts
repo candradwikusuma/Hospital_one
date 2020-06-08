@@ -1,8 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { Router } from "@angular/router";
+import { FormGroup, FormBuilder } from "@angular/forms";
+import { SegmentChangeEventDetail } from "@ionic/core";
+
 import { SliderService } from "../slider.service";
 import { ListdokterService } from "../listdokter.service";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { Docter } from "../docter.model";
+import { DocterService } from "../docter.service";
 
 @Component({
   selector: "app-filter",
@@ -11,6 +15,8 @@ import { FormGroup, FormBuilder } from "@angular/forms";
   //encapsulation: ViewEncapsulation.None,// Add this line
 })
 export class FilterPage implements OnInit {
+  loadedDocter: Docter[];
+  today: Docter[];
   selectedUser: any;
   users = ["adam", "nicole", "alba"];
   myForm: FormGroup;
@@ -26,32 +32,12 @@ export class FilterPage implements OnInit {
   //slider
   items = [];
   slideOpts = {
-    slidesPerView: 2,
-    slidesPerColumn: 3,
-    //   breakpoints: {
-    //     //768x1024
-    //     '@0.75': {
-    //       slidesPerView: 4,
-    //       slidesPerColumn: 4,
-    //     },
-    //     //1024x768
-    //     '@1.33': {
-    //       slidesPerView: 4,
-    //       slidesPerColumn: 4,
-    //     },
-    //     '@1.00': {
-    //       slidesPerView: 4,
-    //       slidesPerColumn: 4,
-    //     },
-    //     '@1.50': {
-    //       slidesPerView: 4,
-    //       slidesPerColumn: 4,
-    //     }
-    //   }
-    // };
+    slidesPerView: 1,
+    slidesPerColumn: 4,
+
     breakpoints: {
       640: {
-        slidesPerView: 1,
+        slidesPerView: 1.1,
         slidesPerColumn: 2,
       },
       768: {
@@ -61,7 +47,7 @@ export class FilterPage implements OnInit {
       },
       800: {
         slidesPerView: 2,
-        slidesPerColumn: 3,
+        slidesPerColumn: 4,
       },
       1024: {
         slidesPerView: 3,
@@ -75,8 +61,9 @@ export class FilterPage implements OnInit {
   };
 
   constructor(
+    private docterService: DocterService,
     private route: Router,
-    private listdokter: ListdokterService,
+
     private fb: FormBuilder
   ) {}
 
@@ -112,7 +99,12 @@ export class FilterPage implements OnInit {
       city: [this.selectedItems],
     });
 
-    this.items = this.listdokter.getDokters();
+    this.loadedDocter = this.docterService.dokter;
+    this.today = this.loadedDocter;
+    // this.items = this.listdokter.getDokters();
+  }
+  segmentChanged(event: CustomEvent<SegmentChangeEventDetail>) {
+    console.log(event.detail);
   }
   next() {
     this.route.navigateByUrl("/dokter");
@@ -144,34 +136,3 @@ export class FilterPage implements OnInit {
     }
   }
 }
-// function() {
-
-//   'use strict';
-//   // breakpoint where swiper will be destroyed
-// // and switches to a dual-column layout
-// const breakpoint = window.matchMedia( '(min-width:31.25em)' );
-
-// // keep track of swiper instances to destroy later
-// let mySwiper;
-// const breakpointChecker = function() {
-
-//   // if larger viewport and multi-row layout needed
-//   if ( breakpoint.matches === true ) {
-
-//     // clean up old instances and inline styles when available
-//   if ( mySwiper !== undefined ) mySwiper.destroy( true, true );
-
-//   // or/and do nothing
-//   return;
-
-//     // else if a small viewport and single column layout needed
-//     } else if ( breakpoint.matches === false ) {
-
-//       // fire small viewport version of swiper
-//       return enableSwiper();
-
-//       };
-
-//     }
-
-// };

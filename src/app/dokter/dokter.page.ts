@@ -1,30 +1,76 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { PickerController } from "@ionic/angular";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { Router, ActivatedRoute } from "@angular/router";
+import { PickerController, NavController } from "@ionic/angular";
 import { PickerOptions } from "@ionic/core";
 
+import { Docter } from "../docter.model";
+import { DocterService } from "../docter.service";
+import { NgForm, FormGroup, Validators, FormControl } from "@angular/forms";
+
 @Component({
-  selector: 'app-dokter',
-  templateUrl: './dokter.page.html',
-  styleUrls: ['./dokter.page.scss'],
+  selector: "app-dokter",
+  templateUrl: "./dokter.page.html",
+  styleUrls: ["./dokter.page.scss"],
 })
 export class DokterPage implements OnInit {
-  // schedule = ''
+  docter: Docter;
   selectedUser: any;
-  users = ['07:00-09:00', '09:00-11:00', '13:00-15:00'];
-  constructor(private route: Router, private pickerController: PickerController) {
+  //form: NgForm;
+  // form: FormGroup;
 
-  }
+  constructor(
+    private route: Router,
+    private pickerController: PickerController,
+    private navCtrl: NavController,
+    private docterService: DocterService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-  }
-  next() {
-    this.route.navigateByUrl('/no-antrian')
+    this.activatedRoute.paramMap.subscribe((paramMap) => {
+      if (!paramMap.has("docterId")) {
+        this.navCtrl.navigateBack("/filter");
+        return;
+      }
+      this.docter = this.docterService.getDokter(paramMap.get("docterId"));
+    });
 
+    // this.form = new FormGroup({
+    //   name: new FormControl(null, {
+    //     updateOn: "blur",
+    //     validators: [Validators.required],
+    //   }),
+    //   email: new FormControl(null, {
+    //     updateOn: "blur",
+    //     validators: [Validators.required],
+    //   }),
+    //   handphone: new FormControl(null, {
+    //     updateOn: "blur",
+    //     validators: [Validators.required],
+    //   }),
+    //   schedule: new FormControl(null, {
+    //     updateOn: "blur",
+    //     validators: [Validators.required],
+    //   }),
+    // });
+  }
+  onBookDoctor() {
+    this.route.navigateByUrl("/no-antrian");
+  }
+  onSubmit(form: NgForm) {
+    if (!form.valid) {
+      return;
+    }
+    const name = form.value.name;
+    const email = form.value.email;
+    const handphone = form.value.handphone;
+    const schedule = form.value.schedule;
+    console.log(name, email, handphone, schedule);
   }
   back() {
-    this.route.navigateByUrl('/filter')
-
+    // this.route.navigateByUrl("/filter");
+    this.navCtrl.navigateBack("/filter");
+    //this.navCtrl.pop();
   }
   // async showBasicPicker() {
   //   let opts: PickerOptions = {
