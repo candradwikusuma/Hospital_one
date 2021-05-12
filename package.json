@@ -30,7 +30,7 @@
     "ng-multiselect-dropdown": "^0.2.10",
     "rxjs": "~6.5.1",
     "rxjs-compat": "^6.5.4",
-    "swiper": "^5.3.6",
+    "swiper": "^6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
